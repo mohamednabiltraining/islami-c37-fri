@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.route.islamic37fri.quran.QuranActivity
+import com.route.islamic37fri.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
     fun startQuranActivity() {
         val intent = Intent(
             this@SplashActivity,
-            QuranActivity::class.java
+            HomeActivity::class.java
         )
         startActivity(intent)
     }

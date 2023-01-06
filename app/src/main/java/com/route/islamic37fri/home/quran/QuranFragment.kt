@@ -1,16 +1,16 @@
-package com.route.islamic37fri.quran
+package com.route.islamic37fri.home.quran
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.route.islamic37fri.Constants
-import com.route.islamic37fri.R
+import com.route.islamic37fri.databinding.FragmentQuranBinding
 import com.route.islamic37fri.suraDetails.SuraDetailsActivity
 
-class QuranActivity : AppCompatActivity() {
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: QuranChaptersAdapter
+class QuranFragment : Fragment() {
     var names = listOf(
         "الفاتحه",
         "البقرة",
@@ -127,22 +127,38 @@ class QuranActivity : AppCompatActivity() {
         "الفلق",
         "الناس"
     )
+    lateinit var adapter: QuranChaptersAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quran)
-        recyclerView = findViewById(R.id.recycler_view)
+    lateinit var viewBinding: FragmentQuranBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewBinding = FragmentQuranBinding.inflate(
+            inflater,
+            container, false
+        )
+        return viewBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews()
+    }
+
+    private fun initViews() {
         adapter = QuranChaptersAdapter(names)
+        viewBinding.recyclerView.adapter = adapter
         adapter.onItemClickListener = object : QuranChaptersAdapter.OnItemClickListener {
             override fun onItemClick(pos: Int, item: String) {
                 startSuraDetailsActivity(pos, item)
             }
         }
-        recyclerView.adapter = adapter
     }
 
     private fun startSuraDetailsActivity(pos: Int, suraName: String) {
-        val intent = Intent(this@QuranActivity, SuraDetailsActivity::class.java)
+        val intent = Intent(activity, SuraDetailsActivity::class.java)
         intent.putExtra(Constants.EXTRA_SURA_INDEX, pos)
         intent.putExtra(Constants.EXTRA_SURA_NAME, suraName)
         startActivity(intent)
