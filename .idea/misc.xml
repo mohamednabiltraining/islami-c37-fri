@@ -4,14 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_quran.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sura_details.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/content_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_quran.xml" value="0.335" />
         <entry key="app/src/main/res/layout/content_sura_details.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/item_chapter_name.xml" value="0.2265625" />
+        <entry key="app/src/main/res/layout/fragment_quran.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/fragment_radio.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/fragment_tasbeh.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/item_chapter_name.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_verse.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/menu/home_bottom_nav_menu.xml" value="0.24635416666666668" />
       </map>
     </option>
   </component>

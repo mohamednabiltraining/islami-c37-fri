@@ -1,4 +1,4 @@
-package com.route.islamic37fri.quran
+package com.route.islamic37fri.home.quran
 
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +27,10 @@ class QuranChaptersAdapter(val titles: List<String>) :
             holder.itemView.setOnClickListener {
                 onItemClickListener?.onItemClick(position, titles[position])
             }
+        }
+        if (holder.adapterPosition == titles.size - 1) {
+            holder.itemView.findViewById<View>(R.id.separator)
+                .visibility = View.GONE
         }
     }
 
